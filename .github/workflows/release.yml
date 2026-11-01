@@ -26,7 +26,9 @@ jobs:
           python build_pyz.py /tmp/second
           cmp dist/footnote.pyz /tmp/second/footnote.pyz
           (cd dist && sha256sum -c footnote.pyz.sha256)
-      - uses: actions/attest-build-provenance@7668571508540a607bdfd90a87a560489fe372eb  # v2.1.0
+      # Signed provenance needs a public repository (or GitHub Enterprise); it switches on by itself once the repo is public.
+      - if: ${{ !github.event.repository.private }}
+        uses: actions/attest-build-provenance@7668571508540a607bdfd90a87a560489fe372eb  # v2.1.0
         with: {subject-path: dist/footnote.pyz}
       - name: Publish
         env:

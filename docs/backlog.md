@@ -2,30 +2,36 @@
 
 Rule for now: **strengthen what exists before adding anything new.** Nothing in the last section gets built until the first two are done.
 
-## 1. Waiting on the project owner (only you can do these)
+## 1. Status of the owner-dependent items
+
+**Done**
+
+| What | Result |
+|---|---|
+| GitHub repository created, code pushed | https://github.com/Faiziimam/Footnote (private) |
+| `OWNER/REPO` replaced, CODEOWNERS filled in | site and docs point at `Faiziimam/Footnote` |
+| Licence switched to Apache-2.0 | `LICENSE` is the official text; `NOTICE` added |
+| First CI run on GitHub | Python 3.9, 3.10, 3.11, 3.12, 3.13, the installer-reproducibility job and the security job all pass |
+| Windows and macOS runs | found two real bugs (folder locks, Windows command paths); fixed; **all 8 CI jobs now pass**, including Windows and macOS |
+
+**Still needs you**
 
 | # | What | Why it needs you | How |
 |---|---|---|---|
-| 1 | Create the GitHub repository; `git init`, first commit, push | The folder isn't a git repository yet; nothing has been committed | your GitHub account |
-| 2 | Replace `Faiziimam/Footnote` in the website | We don't know the repository address | `python scripts/set_site_repo.py yourname/yourrepo` |
-| 3 | Put the real copyright holder name in `NOTICE` (the licence is now Apache-2.0), and get a short lawyer check before the first public release | Ownership and AI-generated code questions are yours to settle | edit `NOTICE` |
-| 4 | Add a contact address to the Code of Conduct | Reports need somewhere to go | `CODE_OF_CONDUCT.md` |
-| 5 | Put your GitHub username in CODEOWNERS | Required reviews can't work without it | `.github/CODEOWNERS` |
-| 6 | Confirm the response-time targets in SECURITY.md (3 / 7 / 30 days) | You are the one committing to them | `SECURITY.md` |
-| 7 | Apply the repository settings | Files cannot switch on branch protection, secret scanning or push protection | `scripts/harden_repo.sh Faiziimam/Footnote --apply` |
-| 8 | Turn on two-factor authentication (hardware key/passkey), signed commits, tag protection, allowed-Actions list | Account-level settings | `docs/security-hardening.md` |
-| 9 | Watch the first CI run on GitHub, including Python 3.10 and the experimental Windows/macOS jobs | Workflows have been validated but never executed; 3.10 was never run | GitHub Actions tab |
-| 10 | Enable GitHub Pages and publish the website | Needs your repository and settings | Settings → Pages (workflow included) |
-| 11 | Cut the first release tag (`v0.1.0`) and verify the checksum and attestation | Needs your repository | `git tag v0.1.0 && git push --tags` |
-| 12 | Test with real accounts and tokens: Notion, Google Sheets (Apps Script), Stripe, GitHub, GitHub Issues, Trello, Shopify, WooCommerce, Slack, email | Every integration so far was tested only against fakes we wrote | `footnote doctor --live`, then use each for real |
-| 13 | Try it inside a real Claude Code (and one other AI tool) | Never run inside a real agent session | `footnote connect claude` |
-| 14 | Try it on real Windows and macOS | Only simulated here | install and run `footnote doctor` |
-| 15 | Open a generated `.pptx` in real PowerPoint (and Keynote / Google Slides) | Verified only with an open-source library and LibreOffice | `footnote deck review.pptx` |
-| 16 | Decide who it is for first (one group, not "everyone") | Positioning drives what to build next | your call |
-| 17 | Find about 5 real users for a two-week trial; decide what counts as success | Only real use shows whether the idea works | see "Is this worth it?" notes |
-| 18 | Confirm the name "Footnote" is free (GitHub, PyPI, domain) and decide on PyPI publishing | We never checked | PyPI / domain registrar |
-| 19 | Decide who answers security reports and how fast | An ongoing commitment | `SECURITY.md` |
-| 20 | Review the threat model and ADRs, and confirm you agree with the claims they make | The public promises are yours | `docs/threat-model.md`, `docs/decisions/` |
+| 1 | Turn on GitHub Pages, then re-run the "Website" workflow | The one API call that does this is blocked in my session. A private repo needs a paid GitHub plan for Pages; otherwise make the repo public | Settings → Pages → Source: **GitHub Actions**; then Actions → Website → Run workflow |
+| 2 | Decide on Dependabot PR #1 (11 action upgrades, including the release workflow) | It changes supply-chain code, and they are major version jumps | review release notes; merge when its checks pass |
+| 4 | Apply the repository settings | Needs admin rights with your own login (my session can't change them) | run on your computer: `gh auth login` then `scripts/harden_repo.sh Faiziimam/Footnote --apply` |
+| 5 | Turn on 2FA (hardware key/passkey), signed commits, tag protection, allowed-Actions list | Account-level settings | `docs/security-hardening.md` |
+| 6 | Put the real copyright holder name in `NOTICE`; get a short lawyer check before the first public release | Ownership and AI-generated-code questions are yours | edit `NOTICE` |
+| 7 | Add a contact address to the Code of Conduct; confirm the response-time targets in `SECURITY.md` | You are the one committing to them | `CODE_OF_CONDUCT.md`, `SECURITY.md` |
+| 8 | Cut the first release tag and check the checksum (the signed attestation works once the repo is public) | Needs your repository | `git tag v0.1.0 && git push --tags` |
+| 9 | Test with real accounts: Notion, Google Sheets, Stripe, GitHub, GitHub Issues, Trello, Shopify, WooCommerce, Slack, email | Every integration was tested only against stand-ins | `footnote doctor --live`, then use each for real |
+| 10 | Try it inside a real Claude Code and one other AI tool | Never run inside a real agent session | `footnote connect claude` |
+| 11 | Open a generated deck in real PowerPoint, Keynote and Google Slides | Verified only with an open-source library and LibreOffice | `footnote deck review.pptx` |
+| 12 | Decide the first audience (one group); find about 5 real users for a two-week trial | Only real use shows whether the idea works | your call |
+| 13 | Check the name Footnote: trademark search, GitHub/domain, PyPI (`footnote-app`) | Never checked | USPTO / EUIPO / WIPO, registrar |
+| 14 | Decide who answers security reports, and how fast | An ongoing commitment | `SECURITY.md` |
+| 15 | Review the threat model and decision records and confirm you stand behind them | The public promises are yours | `docs/threat-model.md`, `docs/decisions/` |
 
 ## 2. Strengthen the current product first (no new integrations)
 
