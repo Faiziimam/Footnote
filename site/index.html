@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" class="nojs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<title>Footnote: a tracker that fills itself in</title>
+<meta name="description" content="Footnote keeps your plan, progress, numbers and who-did-what up to date automatically, in the tools you already use. Free, open source, and it runs on your own computer.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap nav">
+  <a class="brand" href="#top"><span class="logo" aria-hidden="true"><i></i></span>Footnote</a>
+  <nav aria-label="Main"><ul>
+    <li><a href="#problem">The problem</a></li><li><a href="#how">How it works</a></li><li><a href="#daily">Day to day</a></li>
+    <li><a href="#start">Get started</a></li><li><a href="#safe">Safety</a></li><li><a href="#help">Contribute</a></li>
+  </ul></nav>
+</div></header>
+
+<main id="main">
+<section class="hero" id="top"><div class="wrap grid">
+  <div>
+    <p class="eyebrow">Free · open source · runs on your computer</p>
+    <h1>A tracker that fills itself in.</h1>
+    <p class="lead">You do the work. Footnote keeps your plan, your progress, your numbers and “who did what” up to date, in the tools you already use. No more Friday-afternoon status updates.</p>
+    <div class="cta"><a class="btn primary" href="#start">Get started in 2 minutes</a><a class="btn ghost" href="#how">See how it works</a></div>
+    <p class="fine">No account. No server of ours. Nothing leaves your computer unless you connect a tool.</p>
+  </div>
+  <div class="demo" role="img" aria-label="Example: typing 'I finished the logo and started the landing page' moves two cards on the board and raises progress to 62 percent">
+    <div class="say"><b>You said:</b> “I finished the logo and started on the landing page.”</div>
+    <div class="board">
+      <div class="col"><p class="h">Not started</p><div class="card">Write the launch email<small>Priya</small></div><div class="card">Order business cards<small>due Fri</small></div></div>
+      <div class="col"><p class="h">In progress</p><div class="card moved2">Landing page<small>Sam · just now</small></div></div>
+      <div class="col"><p class="h">Done</p><div class="card moved">Design the logo<small>Sam · just now</small></div><div class="card">Pick a domain name<small>last week</small></div></div>
+    </div>
+    <div class="progress" aria-hidden="true"><i></i></div><div class="pnote">62% done · 1 blocked · weekly report goes out Monday</div>
+  </div>
+</div></section>
+
+<section id="problem" class="alt problem"><div class="wrap center">
+  <p class="eyebrow">The problem</p>
+  <h2>Trackers are only useful when someone keeps them up to date. Nobody does.</h2>
+  <p class="lead">So the plan is in one place, the real work is in another, the sales are in a third, and the only way to know what happened is to ask around.</p>
+  <div class="cards">
+    <div class="tile"><h3>It goes stale</h3><p>Updating a tracker feels like extra work, so it falls behind, and then people stop trusting it.</p></div>
+    <div class="tile"><h3>Nobody remembers why</h3><p>Months later: what did we build, who did it, why did we choose this? The answers are scattered across chats and heads.</p></div>
+    <div class="tile"><h3>The numbers live elsewhere</h3><p>Progress in one tool, sales in another, invoices in a spreadsheet. Nobody sees the whole picture in one place.</p></div>
+    <div class="tile"><h3>Handovers hurt</h3><p>When someone leaves, or a project ends, the knowledge walks out of the door with them.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="center"><p class="eyebrow">How it works</p><h2>It watches the work, so you don’t have to report it.</h2>
+  <p class="lead">Footnote sits next to your project and notices what happens. You can also just tell it, in plain English.</p></div>
+  <div class="cards">
+    <div class="tile"><span class="num">1</span><h3>It learns your project</h3><p>It reads your checklists and documents, your commit history, your AI assistant’s updates, and your sales exports. Starting from nothing? Tell it what you’re building and it suggests a plan.</p></div>
+    <div class="tile"><span class="num">2</span><h3>It keeps everything current</h3><p>Tasks move when work starts and finishes. It records who did what, why decisions were made, what the system looks like, and what the numbers are doing.</p></div>
+    <div class="tile"><span class="num">3</span><h3>It shows up where you work</h3><p>Obsidian, Notion, Google Sheets, Excel, GitHub Issues, Trello, a simple web page, or a PowerPoint for your next review. Edit in any of them and it stays in sync.</p></div>
+    <div class="tile"><span class="num">4</span><h3>It tells you what matters</h3><p>A short “what changed since you last looked”, alerts for blocked or overdue work, and a daily, weekly or monthly report by email.</p></div>
+  </div>
+</div></section>
+
+<section id="daily" class="alt"><div class="wrap">
+  <p class="eyebrow">In your day-to-day</p><h2>Pick the one that sounds like you.</h2>
+  <p class="lead">The same tool, used five different ways. Each of these works today.</p>
+  <div class="tabs" role="tablist" aria-label="Who are you?">
+    <button role="tab" id="t-founder" aria-controls="p-founder" aria-selected="true">Founder or shop owner</button>
+    <button role="tab" id="t-dev" aria-controls="p-dev" aria-selected="false">Developer</button>
+    <button role="tab" id="t-creative" aria-controls="p-creative" aria-selected="false">Designer or creative</button>
+    <button role="tab" id="t-manager" aria-controls="p-manager" aria-selected="false">Team lead or manager</button>
+    <button role="tab" id="t-freelance" aria-controls="p-freelance" aria-selected="false">Freelancer or small business</button>
+  </div>
+
+  <div class="panel" id="p-founder" role="tabpanel" aria-labelledby="t-founder">
+    <div><p class="who">Monday, 8 a.m.</p><h3>An email tells you how the business is doing.</h3>
+      <ul><li>“62% of the launch plan is done, 1 task is blocked, revenue is down 18% on last week.”</li>
+      <li>Sales come from your Shopify, WooCommerce or Stripe, or a CSV export. It never makes numbers up; if a number isn’t connected, it says so.</li>
+      <li>Need to show an investor or partner? One command makes a PowerPoint.</li></ul></div>
+    <pre class="term"><span class="c"># get the report by email every Monday, with slides attached</span>
+<span class="p">$</span> footnote add-notify --email-to you@example.com \
+    --smtp-host smtp.gmail.com --digest weekly \
+    --content report --attach deck</pre>
+  </div>
+
+  <div class="panel" id="p-dev" role="tabpanel" aria-labelledby="t-dev" hidden>
+    <div><p class="who">While you code</p><h3>It keeps the board and the documentation honest.</h3>
+      <ul><li>Mention <code>T-012</code> in a commit and the task moves. “Closes T-012” finishes it.</li>
+      <li>It re-reads your code and draws how pages, APIs, data and services connect, and logs every change.</li>
+      <li>Your AI assistant (Claude, Cursor, Codex, Gemini, Copilot…) plans the work, reports progress and records decisions through it.</li>
+      <li>See who else is working in the folder you’re about to change.</li></ul></div>
+    <pre class="term"><span class="c"># one-time: let your AI assistant use it</span>
+<span class="p">$</span> footnote connect claude
+<span class="c"># who knows about checkout?</span>
+<span class="p">$</span> footnote whois checkout/
+<span class="o">Dev Raj: 14 changes, last active yesterday</span></pre>
+  </div>
+
+  <div class="panel" id="p-creative" role="tabpanel" aria-labelledby="t-creative" hidden>
+    <div><p class="who">No code, no git</p><h3>Just tell it what you finished.</h3>
+      <ul><li>“Finished the brochure and started the packaging design.” It matches your words to your tasks, and asks if it isn’t sure.</li>
+      <li>Name a file <code>T-004-brochure-v2.pdf</code> and the task is marked in progress.</li>
+      <li>Wrong guess? <code>footnote undo</code> reverses it.</li>
+      <li>Client review tomorrow? Make the slides in one click.</li></ul></div>
+    <pre class="term"><span class="p">$</span> footnote say "finished the brochure and started packaging"
+<span class="o">✓ T-004 “Brochure”: In progress → Done</span>
+<span class="o">✓ T-005 “Packaging design”: Not started → In progress</span>
+<span class="p">$</span> footnote deck client-review.pptx --for everyone</pre>
+  </div>
+
+  <div class="panel" id="p-manager" role="tabpanel" aria-labelledby="t-manager" hidden>
+    <div><p class="who">Leading a team</p><h3>Know what happened without a stand-up.</h3>
+      <ul><li>“What changed since I last looked?” gives tasks finished and started, what each person did, decisions made and new risks.</li>
+      <li>Heads-up when two people are changing the same files, when something has stalled, or when only one person knows an area.</li>
+      <li>A shared Notion, Sheet or board stays in sync for everyone. Due dates and estimates give you a roadmap and a rough finish date.</li>
+      <li>There’s no leaderboard on purpose: it’s for visibility, not ranking people.</li></ul></div>
+    <pre class="term"><span class="p">$</span> footnote catchup
+<span class="o">## Finished   T-014 “Payments” (Dev Raj)</span>
+<span class="o">## Heads-up   app/checkout touched by Maya and Dev</span>
+<span class="o">## Stalled    T-017 “Admin tables” (9 days)</span></pre>
+  </div>
+
+  <div class="panel" id="p-freelance" role="tabpanel" aria-labelledby="t-freelance" hidden>
+    <div><p class="who">Running yourself</p><h3>Plan, money and handover in one place.</h3>
+      <ul><li>Drop in a bank export: it sorts income and spending into categories, and shows profit by month and how many months of cash you have.</li>
+      <li>Track invoices; you’re alerted once when one is overdue.</li>
+      <li>At the end, a handover report says what was built, what decisions were made, and what’s missing (tests, deployment, open risks).</li></ul></div>
+    <pre class="term"><span class="p">$</span> footnote metrics-import bank.csv
+<span class="p">$</span> footnote invoice add --client Acme --amount 1200 --due "in 30 days"
+<span class="p">$</span> footnote report --for manager --html handover.html</pre>
+  </div>
+</div></section>
+
+<section id="start"><div class="wrap">
+  <div class="center"><p class="eyebrow">Get started</p><h2>Two minutes, no installation headaches.</h2>
+  <p class="lead">You need Python 3.9 or newer (most computers have it; if not, python.org). That’s all: there’s nothing else to install.</p></div>
+  <ol class="steps">
+    <li><strong>Get the single file.</strong> Download <code>footnote.pyz</code> from the latest release and put it in your project folder. Prefer pip? <code>pip install .</code> from the source works too.</li>
+    <li><strong>Run it.</strong> It asks a few plain questions: where would you like your tracker (Obsidian, Notion, Sheets, Excel…), and which AI tool you use, if any.
+      <pre class="term"><span class="p">$</span> python footnote.pyz</pre></li>
+    <li><strong>Open it.</strong> A page opens in your browser. Type what happened, or add a task. That’s it.
+      <pre class="term"><span class="p">$</span> python footnote.pyz ui</pre></li>
+  </ol>
+  <p class="fine center">Prefer not to use a terminal? Double-click <code>Start Tracker.command</code> (Mac, Linux) or <code>start-tracker.bat</code> (Windows). If something seems off, <code>doctor</code> explains it in plain words.</p>
+  <h3 class="center">Works with the tools you already use</h3>
+  <div class="chips center" aria-label="Supported tools">
+    <span class="chip">Obsidian</span><span class="chip">Notion</span><span class="chip">Google Sheets</span><span class="chip">Excel / CSV</span><span class="chip">SQLite</span><span class="chip">GitHub Issues</span><span class="chip">Trello</span>
+    <span class="chip">Claude</span><span class="chip">Cursor</span><span class="chip">Codex</span><span class="chip">Gemini</span><span class="chip">Copilot</span><span class="chip">Windsurf</span><span class="chip">Any tool via command or webhook</span>
+    <span class="chip">GitHub</span><span class="chip">Stripe</span><span class="chip">Shopify</span><span class="chip">WooCommerce</span><span class="chip">Slack</span><span class="chip">Email</span><span class="chip">PowerPoint</span>
+    <span class="chip soon">Linear: not yet</span><span class="chip soon">Jira: not yet</span>
+  </div>
+</div></section>
+
+<section id="safe" class="alt"><div class="wrap two">
+  <div><p class="eyebrow">Your data stays yours</p><h2>Built to be safe to run on your work.</h2>
+    <p class="lead">It runs on your computer. We have no servers, no accounts and no way to see your data.</p>
+    <ul class="checks">
+      <li><strong>Nothing else to trust.</strong> It uses only Python’s own libraries: no third-party packages that could be hijacked.</li>
+      <li><strong>Local by default.</strong> The web page only answers your own computer, needs a secret token, and can run in a view-only mode for screen sharing.</li>
+      <li><strong>Hostile text is handled.</strong> A task title, a shared-tracker row or a commit message can’t run code, escape its folder, or give orders to your AI assistant.</li>
+      <li><strong>Secrets stay private.</strong> Tokens are kept in files only you can read, and are scrubbed from logs.</li>
+      <li><strong>Mistakes are reversible.</strong> Every change is saved first, so <code>undo</code> works on yours and on automatic ones.</li>
+      <li><strong>Releases you can check.</strong> The installer is built identically every time, with a published checksum and signed provenance.</li>
+    </ul></div>
+  <div><p class="eyebrow">Honest limits</p><h2>What it can’t do (yet).</h2>
+    <p class="lead">No software is perfectly secure or finished. Here is where we stand.</p>
+    <ul class="checks warn">
+      <li>Connections to Notion, Sheets, Stripe, GitHub, Shopify and others have been tested against realistic stand-ins, not every real account. <code>doctor --live</code> checks yours, read-only.</li>
+      <li>Linear and Jira aren’t supported yet.</li>
+      <li>Sales and visitor numbers can’t be read from your files, so they come from a connection or an export. Footnote never invents them.</li>
+      <li>There’s no hosted version, by design: your data stays on your device. Team sharing happens through tools you already use.</li>
+      <li>Windows and macOS are newer targets than Linux. Tell us what you hit.</li>
+    </ul>
+    <p class="fine">Read the full <a href="https://github.com/Faiziimam/Footnote/blob/main/docs/threat-model.md">threat model</a> and <a href="https://github.com/Faiziimam/Footnote/blob/main/SECURITY.md">security policy</a>.</p></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <div class="center"><p class="eyebrow">Questions</p><h2>Things people ask.</h2></div>
+  <details><summary>Do I need to know how to code?</summary><p>No. You can use it by typing sentences, or just using the web page. Developers get extra features, but nothing requires them.</p></details>
+  <details><summary>What does it cost?</summary><p>Nothing. It’s free and open source (Apache-2.0 licence).</p></details>
+  <details><summary>Does it send my data anywhere?</summary><p>Only to the services you connect, such as your Notion or your Slack. We run no servers and receive nothing. The optional AI help uses a command you choose and sees task titles and report figures, never your files.</p></details>
+  <details><summary>Does it work without git, or without an AI assistant?</summary><p>Yes to both. Without git it notices changed files and the words you tell it. Without an AI assistant you just talk to it yourself.</p></details>
+  <details><summary>What if it gets something wrong?</summary><p>It asks rather than guesses when unsure, and every change can be undone with <code>footnote undo</code>. Tasks you move by hand are never pushed back by automation.</p></details>
+  <details><summary>Can my whole team use it?</summary><p>Yes, by sharing one Notion database, Google Sheet, GitHub Issues list or Trello board. Everyone’s changes merge, and tasks a teammate adds appear for you with the same ID.</p></details>
+  <details><summary>Why not just use a normal project tool?</summary><p>You still can: Footnote feeds them. The difference is that it fills them in from what actually happened, adds the architecture, decisions, numbers and “who did what”, and keeps the whole story in one report.</p></details>
+</div></section>
+
+<section id="help" class="alt"><div class="wrap two">
+  <div><p class="eyebrow">Contribute</p><h2>Help us make it work for everyone.</h2>
+    <p class="lead">You don’t have to write code. Confusing wording is a bug, and “I got stuck here” is one of the most valuable things you can send us.</p>
+    <div class="cta"><a class="btn primary" href="https://github.com/Faiziimam/Footnote/blob/main/CONTRIBUTING.md">How to contribute</a><a class="btn ghost" href="https://github.com/Faiziimam/Footnote/issues/new/choose">Tell us where you got stuck</a></div></div>
+  <div><ul class="checks">
+    <li>Share how <em>you</em> use it day to day: a bakery, a podcast, a research project.</li>
+    <li>Improve the words, or translate them.</li>
+    <li>Try it on Windows, macOS or Linux and tell us what happens.</li>
+    <li>Add a connection to a tool you use. It’s a small, well-marked part of the code.</li>
+    <li>Found a security problem? Please report it <a href="https://github.com/Faiziimam/Footnote/security/advisories/new">privately</a>, not in public.</li>
+  </ul></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div><strong>Footnote</strong><br>Free and open source under the Apache-2.0 licence.</div>
+  <ul>
+    <li><a href="https://github.com/Faiziimam/Footnote">Source code</a></li><li><a href="https://github.com/Faiziimam/Footnote/blob/main/SECURITY.md">Security</a></li>
+    <li><a href="https://github.com/Faiziimam/Footnote/blob/main/CONTRIBUTING.md">Contributing</a></li><li><a href="https://github.com/Faiziimam/Footnote/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
+    <li><a href="https://github.com/Faiziimam/Footnote/blob/main/CHANGELOG.md">Changelog</a></li>
+  </ul>
+</div></footer>
+<script src="site.js"></script>
+</body>
+</html>

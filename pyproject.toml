@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "footnote-app"
+version = "0.2.0"
+description = "Footnote: a project tracker that keeps itself up to date (Obsidian, Notion, Google Sheets, Excel, SQLite, GitHub Issues, Trello)."
+requires-python = ">=3.9"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+classifiers = ["License :: OSI Approved :: Apache Software License", "Programming Language :: Python :: 3", "Topic :: Software Development :: Libraries"]
+
+[project.scripts]
+footnote = "footnote.cli:main"
+
+[tool.setuptools]
+packages = ["footnote", "footnote.mirrors"]
+
+[tool.setuptools.package-data]
+footnote = ["ui.html", "appscript.gs"]

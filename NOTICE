@@ -1,0 +1,9 @@
+Footnote
+Copyright 2026 Footnote contributors
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in this project is licensed under the same terms (Apache-2.0, section 5), without additional terms or conditions.
+
+Footnote has no third-party runtime dependencies. Development tools used only in tests and CI (for example bandit and python-pptx) are not distributed with it.
+
+"Footnote" and the Footnote logo are names and marks of the project's maintainers. The Apache License does not grant permission to use them (section 6): you may fork and redistribute the code, but please call your version something else.

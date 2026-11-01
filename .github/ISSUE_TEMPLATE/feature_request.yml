@@ -1,0 +1,19 @@
+name: "Idea / feature request"
+description: "Tell us what you wish it did, in your own words."
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: "What problem are you trying to solve?"
+      description: "Who are you (founder, designer, developer...) and what are you tracking?"
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: "What would make it easy?"
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "How do you handle it today?"

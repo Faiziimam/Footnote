@@ -1,0 +1,8 @@
+# Host the webhook relay anywhere that runs containers:  docker build -f Dockerfile.relay -t tracker-relay . && docker run -p 8080:8080 -v relaydata:/data tracker-relay
+FROM python:3.12-slim
+WORKDIR /app
+COPY footnote ./footnote
+EXPOSE 8080
+RUN useradd --system --no-create-home relay && mkdir -p /data && chown relay /data
+USER relay
+CMD ["python", "-m", "footnote", "relay", "--host", "0.0.0.0", "--port", "8080", "--store", "/data/queue.json"]

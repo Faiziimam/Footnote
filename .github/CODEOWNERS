@@ -1,0 +1,12 @@
+# Code owners are automatically asked to review changes to these paths.
+# (Turn on "Require review from Code Owners" in branch protection: docs/security-hardening.md)
+
+*                                  @Faiziimam
+/footnote/security.py               @Faiziimam
+/footnote/server.py                 @Faiziimam
+/footnote/relay.py                  @Faiziimam
+/footnote/mirrors/http.py            @Faiziimam
+/footnote/formulas.py               @Faiziimam
+/.github/                          @Faiziimam
+/SECURITY.md                        @Faiziimam
+/build_pyz.py                      @Faiziimam

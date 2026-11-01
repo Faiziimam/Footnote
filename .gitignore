@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+dist/
+build/
+*.egg-info/
+.env
+.env.*
+!.env.example
+# the tracker's own data and private settings (this project tracks itself, locally)
+Tracker/
+Tracker.csv
+tracker.db
+.footnote/
+*.pptx
+.claude/settings.local.json
+.venv/
+uv.lock

@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.bat text eol=crlf
+*.pyz binary
+*.pptx binary
+*.png binary
+site/** linguist-documentation

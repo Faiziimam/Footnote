@@ -1,0 +1,30 @@
+name: "I got stuck / something confused me"
+description: "Anything that was unclear, surprising or didn't work. You do not need to be technical."
+labels: ["help wanted", "usability"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks! Confusion is a bug in *our* explanation, not in you. Please remove any tokens or private names from what you paste."
+  - type: textarea
+    id: wanted
+    attributes:
+      label: "What were you trying to do?"
+      placeholder: "e.g. connect my Notion"
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: "What happened instead?"
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: "Output of `footnote doctor` (optional but very helpful)"
+      render: text
+  - type: input
+    id: system
+    attributes:
+      label: "Your system"
+      placeholder: "Windows 11 / macOS 14 / Ubuntu 24.04 - Python 3.12"

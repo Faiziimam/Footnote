@@ -1,0 +1,38 @@
+name: "Bug report"
+description: "Something is broken or wrong."
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Security problem? Don't file it here; see SECURITY.md. Remove tokens and private data from anything you paste."
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to reproduce"
+      placeholder: "1. footnote say ...\n2. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "What you expected"
+  - type: textarea
+    id: actual
+    attributes:
+      label: "What actually happened (include the exact message)"
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: "`footnote doctor` and `footnote log` output"
+      render: text
+  - type: input
+    id: version
+    attributes:
+      label: "Version"
+      placeholder: "release tag or git commit"
+  - type: input
+    id: system
+    attributes:
+      label: "OS and Python version"
