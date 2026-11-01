@@ -110,7 +110,7 @@ class LocalWebServer(unittest.TestCase):
      scripts: document.querySelectorAll('script').length, iframes: document.querySelectorAll('iframe').length, svgs: document.querySelectorAll('svg').length,
      cards: document.querySelectorAll('.card').length, text: document.body.innerText.includes('<img src=x') }}));
   console.log(JSON.stringify({{ ...r, dialogs }})); await b.close(); }})();"""
-        r = subprocess.run(["node", "-e", js], capture_output=True, text=True, timeout=60, cwd="/tmp", encoding="utf-8")
+        r = subprocess.run(["node", "-e", js], capture_output=True, text=True, timeout=60, cwd=tempfile.gettempdir(), encoding="utf-8")
         srv.shutdown()
         if r.returncode != 0:
             self.skipTest("playwright unavailable: " + r.stderr[:80])

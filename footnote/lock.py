@@ -4,6 +4,7 @@ Uses the operating system's file locking (released automatically if a process di
 stale locks). Re-entrant: nested use in one process is fine.
 """
 import contextlib
+import os
 import threading
 import time
 from pathlib import Path
@@ -56,7 +57,7 @@ def _release(fh):
 
 @contextlib.contextmanager
 def locked(path, timeout=60.0):
-    path = str(path)
+    path = os.path.realpath(str(path))   # one folder, one lock: /var vs /private/var (macOS), symlinks, Windows 8.3 short names
     if not _tlock.acquire(timeout=timeout):
         raise Busy()
     try:

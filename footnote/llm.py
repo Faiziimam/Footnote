@@ -6,6 +6,7 @@ formulas that our own checker accepts. Anything else it says is discarded.
 """
 import hashlib
 import json
+import os
 import re
 import shlex
 import shutil
@@ -27,9 +28,16 @@ def enabled(cfg, feature=None):
     return c.get(feature, True) if feature else True
 
 
+def split_command(cmdline, windows=None):
+    """Split a command line the way the user's system would. POSIX rules would eat the backslashes in C:\\Tools\\claude.cmd."""
+    if (os.name == "nt") if windows is None else windows:
+        return [t[1:-1] if len(t) > 1 and t[0] == t[-1] and t[0] in "\"'" else t for t in shlex.split(cmdline, posix=False)]
+    return shlex.split(cmdline)
+
+
 def ask(cfg, prompt, project=None, timeout=120):
     c = cfg["llm"]
-    cmd = shlex.split(c.get("command") or "claude -p")
+    cmd = split_command(c.get("command") or "claude -p")
     def run(use_stdin):
         return subprocess.run(cmd + ([] if use_stdin else [prompt]), input=prompt if use_stdin else None, capture_output=True,  # nosec B603 B607
                               text=True, encoding="utf-8", errors="replace", timeout=timeout)

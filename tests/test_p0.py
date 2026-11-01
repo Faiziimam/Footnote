@@ -9,6 +9,25 @@ ROOT = str(Path(__file__).resolve().parent.parent)
 
 
 class Locking(unittest.TestCase):
+    def test_one_folder_is_one_lock_however_it_is_spelled(self):
+        """macOS reports /var as /private/var, Windows has short 8.3 names, symlinks exist everywhere: all must share one lock."""
+        real = Path(tempfile.mkdtemp()); git(real, "init", "-q", "-b", "main")
+        link = Path(tempfile.mkdtemp()) / "alias"
+        try:
+            os.symlink(real, link, target_is_directory=True)
+        except (OSError, NotImplementedError):
+            self.skipTest("cannot create symlinks here")
+        with lock.locked(config.lock_path(link)):                 # one spelling...
+            Tracker(real).add_task("same folder, other spelling")  # ...and the other must not lock itself out
+        self.assertEqual(len(Tracker(link).tasks()), 1)
+
+    def test_windows_style_commands_survive_splitting(self):
+        from footnote import llm
+        self.assertEqual(llm.split_command(r"C:\Tools\claude.cmd -p", windows=True), [r"C:\Tools\claude.cmd", "-p"])
+        self.assertEqual(llm.split_command(r'"C:\Program Files\Claude\claude.exe" -p --x "a b"', windows=True),
+                         [r"C:\Program Files\Claude\claude.exe", "-p", "--x", "a b"])
+        self.assertEqual(llm.split_command("claude -p 'two words'", windows=False), ["claude", "-p", "two words"])
+
     def test_parallel_processes_do_not_collide(self):
         d = Path(tempfile.mkdtemp()); git(d, "init", "-q", "-b", "main")
         Tracker(d).sync()
@@ -807,7 +826,7 @@ class SharingAndPortfolio(unittest.TestCase):
             a = Tracker(healthy); a.add_task("One"); a.say("finished one")
             b = Tracker(sick); t = b.add_task("Ship"); b.add_task("Pay vendor", who="x"); b.say("blocked on ship"); b.set_field("T-002", "due", "2025-01-01")
             b.record("risk", "Supplier unreliable")
-            portfolio.add(healthy); portfolio.add(sick); portfolio.add("/tmp")
+            portfolio.add(healthy); portfolio.add(sick); portfolio.add(tempfile.gettempdir())
             portfolio.add(sick)                                                         # adding twice is harmless
             self.assertEqual(len(portfolio.load()), 3)
             md, cards = portfolio.build(portfolio.load() + ["/definitely/not/here"])
