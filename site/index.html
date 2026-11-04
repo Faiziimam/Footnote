@@ -8,6 +8,21 @@
 <meta name="color-scheme" content="light dark">
 <title>Footnote: a tracker that fills itself in</title>
 <meta name="description" content="Footnote keeps your plan, progress, numbers and who-did-what up to date automatically, in the tools you already use. Free, open source, and it runs on your own computer.">
+<link rel="canonical" href="https://faiziimam.github.io/Footnote/">
+<meta name="theme-color" content="#3b5bdb">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Footnote">
+<meta property="og:title" content="Footnote: a tracker that fills itself in">
+<meta property="og:description" content="Your plan, progress, numbers and who-did-what, kept up to date automatically in Obsidian, Notion, Google Sheets, Excel and more. Free, open source, runs on your computer.">
+<meta property="og:url" content="https://faiziimam.github.io/Footnote/">
+<meta property="og:image" content="https://faiziimam.github.io/Footnote/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Footnote's board showing tasks that moved by themselves">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Footnote: a tracker that fills itself in">
+<meta name="twitter:description" content="Free, open source, and it runs on your own computer. Try it with: npx footnote-app">
+<meta name="twitter:image" content="https://faiziimam.github.io/Footnote/img/og.png">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="site.css">
 </head>
@@ -16,8 +31,9 @@
 <header class="top"><div class="wrap nav">
   <a class="brand" href="#top"><span class="logo" aria-hidden="true"><i></i></span>Footnote</a>
   <nav aria-label="Main"><ul>
-    <li><a href="#problem">The problem</a></li><li><a href="#how">How it works</a></li><li><a href="#daily">Day to day</a></li>
-    <li><a href="#start">Get started</a></li><li><a href="#safe">Safety</a></li><li><a href="#help">Contribute</a></li>
+    <li><a href="#how">How it works</a></li><li><a href="#features">Features</a></li><li><a href="#daily">Day to day</a></li>
+    <li><a href="#start">Get started</a></li><li><a href="#safe">Safety</a></li><li><a href="#faq">FAQ</a></li>
+    <li><a class="gh" href="https://github.com/Faiziimam/Footnote">GitHub</a></li>
   </ul></nav>
 </div></header>
 
@@ -28,7 +44,9 @@
     <h1>A tracker that fills itself in.</h1>
     <p class="lead">You do the work. Footnote keeps your plan, your progress, your numbers and “who did what” up to date, in the tools you already use. No more Friday-afternoon status updates.</p>
     <div class="cta"><a class="btn primary" href="#start">Get started in 2 minutes</a><a class="btn ghost" href="#how">See how it works</a></div>
-    <p class="fine">No account. No server of ours. Nothing leaves your computer unless you connect a tool.</p>
+    <pre class="term install" aria-label="Install command"><span class="p">$</span> npx footnote-app</pre>
+    <p class="fine">Needs Python 3.9+. No account. No server of ours. Nothing leaves your computer unless you connect a tool.</p>
+    <p class="badges"><a href="https://github.com/Faiziimam/Footnote/releases/latest">Latest release: v0.1.0</a><span>Apache-2.0</span><span>0 runtime dependencies</span></p>
   </div>
   <div class="demo" role="img" aria-label="Example: typing 'I finished the logo and started the landing page' moves two cards on the board and raises progress to 62 percent">
     <div class="say"><b>You said:</b> “I finished the logo and started on the landing page.”</div>
@@ -39,6 +57,14 @@
     </div>
     <div class="progress" aria-hidden="true"><i></i></div><div class="pnote">62% done · 1 blocked · weekly report goes out Monday</div>
   </div>
+</div></section>
+
+<section class="strip" aria-label="At a glance"><div class="wrap facts">
+  <div><b>0</b><span>runtime dependencies</span></div>
+  <div><b>7</b><span>trackers to sync with</span></div>
+  <div><b>6</b><span>AI assistants supported</span></div>
+  <div><b>180+</b><span>automated tests</span></div>
+  <div><b>Free</b><span>Apache-2.0 open source</span></div>
 </div></section>
 
 <section id="problem" class="alt problem"><div class="wrap center">
@@ -61,6 +87,34 @@
     <div class="tile"><span class="num">2</span><h3>It keeps everything current</h3><p>Tasks move when work starts and finishes. It records who did what, why decisions were made, what the system looks like, and what the numbers are doing.</p></div>
     <div class="tile"><span class="num">3</span><h3>It shows up where you work</h3><p>Obsidian, Notion, Google Sheets, Excel, GitHub Issues, Trello, a simple web page, or a PowerPoint for your next review. Edit in any of them and it stays in sync.</p></div>
     <div class="tile"><span class="num">4</span><h3>It tells you what matters</h3><p>A short “what changed since you last looked”, alerts for blocked or overdue work, and a daily, weekly or monthly report by email.</p></div>
+  </div>
+</div></section>
+
+<section id="see" class="alt"><div class="wrap">
+  <div class="center"><p class="eyebrow">See it</p><h2>The real thing, not a mock-up.</h2>
+  <p class="lead">These are screenshots of Footnote running on a small bakery’s online launch.</p></div>
+  <div class="shots">
+    <figure><div class="frame"><i></i><i></i><i></i></div><img src="img/board.png" width="1920" height="960" loading="lazy" alt="Footnote’s board for a bakery’s online launch: tasks in Not started, In progress, Blocked and Done columns, a progress bar at 36 percent, and a box to type what happened"><figcaption><b>The board.</b> Type what happened, or move cards. Blocked work and “waiting on” tasks stand out.</figcaption></figure>
+    <figure><div class="frame"><i></i><i></i><i></i></div><img src="img/report.png" width="1500" height="1050" loading="lazy" alt="Footnote’s project report: progress, momentum, a rough finish estimate, recently finished work, what is up next, what is blocked, and the schedule"><figcaption><b>The report.</b> Progress, pace, what’s next and what’s blocked, written for a manager or a client.</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="features"><div class="wrap">
+  <div class="center"><p class="eyebrow">Features</p><h2>Everything a project needs to remember.</h2>
+  <p class="lead">Tasks are only the start. Footnote also keeps the story of the project.</p></div>
+  <div class="feat">
+    <div class="tile"><h3>Plain-English updates</h3><p>Say “finished the logo, started the landing page”. It finds the tasks and asks when unsure.</p></div>
+    <div class="tile"><h3>Reads your git history</h3><p>Mention <code>T-004</code> in a commit and it moves. “Closes T-004” or a merge finishes it.</p></div>
+    <div class="tile"><h3>Two-way sync</h3><p>Obsidian, Notion, Google Sheets, Excel or CSV, SQLite, GitHub Issues and Trello. Edit anywhere; changes merge.</p></div>
+    <div class="tile"><h3>Works with your AI assistant</h3><p>Claude, Cursor, Codex, Gemini, Copilot and Windsurf can plan work and report progress through it.</p></div>
+    <div class="tile"><h3>Architecture map</h3><p>It re-reads your project and draws how pages, APIs, data and services connect, and logs every change.</p></div>
+    <div class="tile"><h3>Decisions and risks</h3><p>A journal of what was decided and why, so the answer isn’t lost when someone leaves.</p></div>
+    <div class="tile"><h3>Numbers that don’t lie</h3><p>Sales, visitors and spend from Shopify, WooCommerce, Stripe or CSV. If a number isn’t connected, it says so.</p></div>
+    <div class="tile"><h3>Money and invoices</h3><p>Sort income and spending, see profit by month and runway, and get alerted once when an invoice is overdue.</p></div>
+    <div class="tile"><h3>Team view</h3><p>Who did what, who owns which area, who to ask, and a heads-up when two people touch the same files.</p></div>
+    <div class="tile"><h3>Reports and slides</h3><p>A manager report, a shareable HTML page, or a PowerPoint deck in one command.</p></div>
+    <div class="tile"><h3>Email and Slack digests</h3><p>A daily, weekly or monthly catch-up, with alerts for blocked or overdue work.</p></div>
+    <div class="tile"><h3>Undo for everything</h3><p>Every change is saved first, so <code>undo</code> reverses yours and the automatic ones.</p></div>
   </div>
 </div></section>
 
@@ -138,12 +192,18 @@
   <div class="center"><p class="eyebrow">Get started</p><h2>Two minutes, no installation headaches.</h2>
   <p class="lead">You need Python 3.9 or newer (most computers have it; if not, python.org). That’s all: there’s nothing else to install.</p></div>
   <ol class="steps">
-    <li><strong>Get the single file.</strong> Download <code>footnote.pyz</code> from the latest release and put it in your project folder. Already use Node? <code>npx footnote-app</code> does the same without a download (it still needs Python on your computer). Prefer pip? <code>pip install .</code> works too.</li>
+    <li><strong>Get it.</strong> Pick whichever is easiest for you:
+      <ul class="routes">
+        <li><b>With Node:</b> run <code>npx footnote-app</code>. There’s nothing to download (Python 3.9+ must be on your computer).</li>
+        <li><b>One file:</b> download <code>footnote.pyz</code> from the <a href="https://github.com/Faiziimam/Footnote/releases/latest">latest release</a> and put it in your project folder. A checksum is published next to it.</li>
+        <li><b>From source:</b> clone the repository, then <code>pip install .</code> inside it.</li>
+      </ul></li>
     <li><strong>Run it.</strong> It asks a few plain questions: where would you like your tracker (Obsidian, Notion, Sheets, Excel…), and which AI tool you use, if any.
       <pre class="term"><span class="p">$</span> python footnote.pyz</pre></li>
     <li><strong>Open it.</strong> A page opens in your browser. Type what happened, or add a task. That’s it.
       <pre class="term"><span class="p">$</span> python footnote.pyz ui</pre></li>
   </ol>
+  <div class="cta center"><a class="btn primary" href="https://github.com/Faiziimam/Footnote/releases/latest">Download v0.1.0</a><a class="btn ghost" href="https://github.com/Faiziimam/Footnote">View the source</a></div>
   <p class="fine center">Prefer not to use a terminal? Double-click <code>Start Tracker.command</code> (Mac, Linux) or <code>start-tracker.bat</code> (Windows). If something seems off, <code>doctor</code> explains it in plain words.</p>
   <h3 class="center">Works with the tools you already use</h3>
   <div class="chips center" aria-label="Supported tools">
@@ -177,6 +237,12 @@
     <p class="fine">Read the full <a href="https://github.com/Faiziimam/Footnote/blob/main/docs/threat-model.md">threat model</a> and <a href="https://github.com/Faiziimam/Footnote/blob/main/SECURITY.md">security policy</a>.</p></div>
 </div></section>
 
+<section id="news" class="band"><div class="wrap center">
+  <p class="eyebrow">Latest release</p><h2>Footnote v0.1.0 is out.</h2>
+  <p class="lead">The first public release: board, git and AI-assistant updates, seven trackers, reports, slides, email digests and a team view. The installer is built identically every time and comes with a checksum.</p>
+  <div class="cta"><a class="btn primary" href="https://github.com/Faiziimam/Footnote/releases/tag/v0.1.0">Read the release notes</a><a class="btn ghost" href="https://github.com/Faiziimam/Footnote/blob/main/CHANGELOG.md">Changelog</a></div>
+</div></section>
+
 <section id="faq"><div class="wrap">
   <div class="center"><p class="eyebrow">Questions</p><h2>Things people ask.</h2></div>
   <details><summary>Do I need to know how to code?</summary><p>No. You can use it by typing sentences, or just using the web page. Developers get extra features, but nothing requires them.</p></details>
@@ -200,6 +266,12 @@
     <li>Found a security problem? Please report it <a href="https://github.com/Faiziimam/Footnote/security/advisories/new">privately</a>, not in public.</li>
   </ul></div>
 </div></section>
+
+<section class="final"><div class="wrap center">
+  <h2>Stop updating the tracker. Start working.</h2>
+  <p class="lead">Free, open source, and on your computer in about two minutes.</p>
+  <div class="cta"><a class="btn primary" href="#start">Get started</a><a class="btn ghost" href="https://github.com/Faiziimam/Footnote">Star it on GitHub</a></div>
+</div></section>
 </main>
 
 <footer><div class="wrap">
@@ -207,7 +279,8 @@
   <ul>
     <li><a href="https://github.com/Faiziimam/Footnote">Source code</a></li><li><a href="https://github.com/Faiziimam/Footnote/blob/main/SECURITY.md">Security</a></li>
     <li><a href="https://github.com/Faiziimam/Footnote/blob/main/CONTRIBUTING.md">Contributing</a></li><li><a href="https://github.com/Faiziimam/Footnote/blob/main/CODE_OF_CONDUCT.md">Code of conduct</a></li>
-    <li><a href="https://github.com/Faiziimam/Footnote/blob/main/CHANGELOG.md">Changelog</a></li>
+    <li><a href="https://github.com/Faiziimam/Footnote/blob/main/CHANGELOG.md">Changelog</a></li><li><a href="https://github.com/Faiziimam/Footnote/releases">Releases</a></li>
+    <li><a href="https://github.com/Faiziimam/Footnote/issues/new/choose">Help and ideas</a></li>
   </ul>
 </div></footer>
 <script src="site.js"></script>

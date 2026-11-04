@@ -18,7 +18,7 @@ class Collect(HTMLParser):
         if "id" in a:
             self.ids.append(a["id"])
         for k in ("href", "src"):
-            if k in a:
+            if k in a and not (tag == "link" and a.get("rel") == "canonical"):      # a canonical link names this page; it loads nothing
                 self.hrefs.append((tag, k, a[k]))
         self.stack.append(tag)
 

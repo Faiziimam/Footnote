@@ -20,6 +20,8 @@ Obsidian, Notion, Google Sheets, Excel or a database. Runs on your own computer.
 <img alt="No runtime dependencies" src="https://img.shields.io/badge/runtime%20dependencies-0-brightgreen">
 </p>
 
+<p align="center"><a href="https://faiziimam.github.io/Footnote/"><img src="site/img/board.png" alt="Footnote's board for a bakery's online launch, with tasks in Not started, In progress, Blocked and Done columns" width="860"></a></p>
+
 ## Who is it for?
 
 - **Founders and makers** who want to know "where are we, what's next?" without keeping a tracker by hand.
