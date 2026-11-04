@@ -5,6 +5,7 @@ from footnote import connect
 
 ROOT = Path(__file__).resolve().parent.parent
 NODE, NPM = shutil.which("node"), shutil.which("npm")
+PKG_VERSION = json.loads((ROOT / "npm" / "package.json").read_text(encoding="utf-8"))["version"]
 LIFECYCLE = {"preinstall", "install", "postinstall", "prepare", "prepublish", "prepublishOnly", "prepack", "postpack", "preuninstall", "uninstall", "postuninstall"}
 
 
@@ -22,7 +23,7 @@ class PackageFile(unittest.TestCase):
 
     def test_version_matches_the_python_package(self):
         py = re.search(r'^version = "([^"]+)"', (ROOT / "pyproject.toml").read_text(encoding="utf-8"), re.M).group(1)
-        self.assertEqual(self.pkg["version"], py)
+        self.assertEqual(PKG_VERSION, py)
 
     def test_launcher_has_no_shell_and_no_network(self):
         src = (ROOT / "npm" / "bin" / "footnote.js").read_text(encoding="utf-8")
@@ -111,11 +112,11 @@ class Launcher(unittest.TestCase):
         self.run_it("--project", str(d), "connect", "claude", env={"npm_command": "exec"})
         srv = json.loads((d / ".mcp.json").read_text(encoding="utf-8"))["mcpServers"]["footnote"]
         flat = " ".join([srv["command"], *srv["args"]])
-        self.assertIn("npx", flat); self.assertIn("footnote-app@0.2.0", flat); self.assertTrue(flat.rstrip().endswith("mcp"))
+        self.assertIn("npx", flat); self.assertIn("footnote-app@" + PKG_VERSION, flat); self.assertTrue(flat.rstrip().endswith("mcp"))
         self.assertNotIn("_npx", flat)                                                   # no path into a temporary cache
         self.run_it("--project", str(d), "install-hook", env={"npm_command": "exec"})
         hook = json.loads((d / ".claude" / "settings.json").read_text(encoding="utf-8"))["hooks"]["Stop"][0]["hooks"][0]["command"]
-        self.assertTrue(hook.startswith("npx -y footnote-app@0.2.0 --project "))
+        self.assertTrue(hook.startswith("npx -y footnote-app@" + PKG_VERSION + " --project "))
         d2 = self.project()                                                              # installed normally: points at the installed copy
         self.run_it("--project", str(d2), "connect", "claude", env={"npm_command": "install"})
         srv2 = json.loads((d2 / ".mcp.json").read_text(encoding="utf-8"))["mcpServers"]["footnote"]
