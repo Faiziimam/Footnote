@@ -3,6 +3,7 @@ All notable changes. Format based on "Keep a Changelog"; versions follow semanti
 
 ## Unreleased
 ### Added
+- npm package (`npx footnote-app`, `npm install -g footnote-app`): a dependency-free, install-script-free launcher around the same `footnote.pyz`; it still needs Python 3.9+. `footnote connect` writes the right `npx` setup when started with npx.
 - Reports by email (daily / weekly / monthly), with an optional PowerPoint deck and HTML copy attached; `footnote deck`.
 - Read-only web view (`footnote ui --read-only`).
 - Security: threat model, SECURITY.md, hardening checklist/script, CodeQL, Scorecard, pinned Actions, reproducible and attested releases.

@@ -15,3 +15,8 @@ tracker.db
 .claude/settings.local.json
 .venv/
 uv.lock
+
+# npm packaging output
+npm/vendor/
+npm/*.tgz
+node_modules/

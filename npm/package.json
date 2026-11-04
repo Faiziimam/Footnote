@@ -1,0 +1,13 @@
+{
+  "name": "footnote-app",
+  "version": "0.2.0",
+  "description": "Footnote: a project tracker that keeps itself up to date. Needs Python 3.9+ on the computer; no Python packages to install.",
+  "bin": { "footnote": "bin/footnote.js" },
+  "files": ["bin/footnote.js", "vendor/footnote.pyz", "vendor/footnote.pyz.sha256", "README.md", "LICENSE", "NOTICE"],
+  "engines": { "node": ">=18" },
+  "license": "Apache-2.0",
+  "keywords": ["project-tracker", "tracker", "ai", "mcp", "notion", "obsidian", "handover", "reports"],
+  "repository": { "type": "git", "url": "git+https://github.com/Faiziimam/Footnote.git" },
+  "homepage": "https://github.com/Faiziimam/Footnote#readme",
+  "bugs": { "url": "https://github.com/Faiziimam/Footnote/issues" }
+}

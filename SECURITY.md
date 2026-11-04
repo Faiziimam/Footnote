@@ -54,6 +54,10 @@ of traffic to a relay you chose to host.
 - **Releases you can verify.** `footnote.pyz` is built **reproducibly**: rebuilding the same source gives the same bytes. Each
   release publishes a SHA-256 and a signed build-provenance attestation.
 
+## The npm package
+
+`footnote-app` on npm contains only a ~60-line launcher plus the same `footnote.pyz` as the release (its SHA-256 is checked every time it runs). It has **no dependencies and no install scripts**, so installing it executes nothing; running it starts Python with your arguments passed straight through (no shell). `tests/test_npm.py` enforces all of this.
+
 ## Verifying a download
 
 ```bash

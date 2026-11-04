@@ -110,7 +110,7 @@ class Website(unittest.TestCase):
         shown = set()
         for ln in lines:
             ln = re.sub(r"<[^>]+>", "", ln).strip()
-            m = re.match(r"(?:python )?footnote(?:\.pyz)?(?:\s+(?:--\S+\s+\S+\s+)*([a-z][a-z-]+))?", ln)
+            m = re.match(r"(?:python |npx )?footnote(?:-app|\.pyz)?(?:\s+(?:--\S+\s+\S+\s+)*([a-z][a-z-]+))?", ln)
             self.assertTrue(m, f"unrecognised command line: {ln}")
             if m.group(1):                                              # a bare `python footnote.pyz` starts the guided setup
                 shown.add(m.group(1))

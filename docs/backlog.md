@@ -31,7 +31,8 @@ Rule for now: **strengthen what exists before adding anything new.** Nothing in 
 | 12 | Decide the first audience (one group); find about 5 real users for a two-week trial | Only real use shows whether the idea works | your call |
 | 13 | Check the name Footnote: trademark search, GitHub/domain, PyPI (`footnote-app`) | Never checked | USPTO / EUIPO / WIPO, registrar |
 | 14 | Decide who answers security reports, and how fast | An ongoing commitment | `SECURITY.md` |
-| 15 | Review the threat model and decision records and confirm you stand behind them | The public promises are yours | `docs/threat-model.md`, `docs/decisions/` |
+| 15 | Publish to npm: create/confirm the npm account with 2FA, then `python scripts/build_npm.py dist/npm && cd dist/npm && npm publish --access public` (the package name `footnote-app` was free when checked) | Needs your npm account | npmjs.com |
+| 16 | Review the threat model and decision records and confirm you stand behind them | The public promises are yours | `docs/threat-model.md`, `docs/decisions/` |
 
 ## 2. Strengthen the current product first (no new integrations)
 
@@ -64,6 +65,8 @@ Rule for now: **strengthen what exists before adding anything new.** Nothing in 
 **Talking to it:** Microsoft Teams, Discord, Telegram, WhatsApp, a Slack slash command, "forward an email to create a task", calendar (Google / Outlook).
 
 **More AI tools:** Aider, Cline, Zed, JetBrains AI, Amazon Q (each needs its MCP configuration format verified first).
+
+**No-Python installs:** native programs per operating system (PyInstaller/Nuitka), signed/notarised, via Homebrew, winget, scoop and per-platform npm packages (see ADR 0005; wait until users show Python is the blocker).
 
 **Native packaging:** Zapier app, Make module, n8n node, Obsidian plugin, VS Code extension, JetBrains plugin, menu-bar app, mobile companion.
 

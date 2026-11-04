@@ -1,5 +1,6 @@
 """`footnote connect <tool>`: write the config files that make an AI tool use the tracker."""
 import json
+import os
 import re
 import shutil
 import sys
@@ -12,7 +13,21 @@ TOOLS = ["claude", "cursor", "codex", "gemini", "copilot", "windsurf", "generic"
 MARK = "<!-- footnote -->"
 
 
+def via_npx():
+    """If we were started with `npx footnote-app ...`, the copy on disk is temporary, so setup files must re-run npx instead of
+    pointing at a cache folder. The package spec comes from an environment variable and ends up in commands: accept only a plain
+    `name@version` and nothing else."""
+    spec = os.environ.get("FOOTNOTE_VIA_NPM", "")
+    if os.environ.get("FOOTNOTE_VIA_NPX") == "1" and re.fullmatch(r"[a-z0-9][a-z0-9._-]{1,60}@\d+\.\d+\.\d+(?:-[a-z0-9.]+)?", spec):
+        return spec
+    return None
+
+
 def server_cmd(project):
+    spec = via_npx()
+    if spec:
+        args = ["-y", spec, "--project", str(project), "mcp"]
+        return {"command": "cmd", "args": ["/c", "npx", *args]} if os.name == "nt" else {"command": "npx", "args": args}
     exe = shutil.which("footnote")
     pkg_parent = str(Path(__file__).resolve().parent.parent)
     if exe:
@@ -28,6 +43,9 @@ def hook_command(project):
     A tiny launcher in .footnote/ finds the package, so it also works when we were never pip-installed."""
     project = Path(project).resolve()
     shell_safe_path(project)
+    spec = via_npx()
+    if spec:                                   # a global `npm install -g` is faster for hooks; npx works but starts slower
+        return f'npx -y {spec} --project "{project}" sync --quiet'
     shell_safe_path(sys.executable)
     exe = shutil.which("footnote")
     if exe:

@@ -6,7 +6,7 @@ Google Sheets, Excel, or a database. No technical knowledge needed.
 
 ## Start (2 minutes)
 
-1. Install Python 3.9+ (python.org) — then in the folder you work in:
+1. Install Python 3.9+ (python.org). Already use Node? Just run `npx footnote-app` (it needs Python too, but no Python packages). Otherwise, in the folder you work in:
    `pip install /path/to/footnote`  (or just double-click **Start Tracker.command** / **start-tracker.bat**)
 2. Run `footnote` — it asks a few plain questions (where do you want your tracker? which AI tool do you use?).
 3. Run `footnote ui` — your tracker opens in the browser. Type what happened ("I finished the logo and
