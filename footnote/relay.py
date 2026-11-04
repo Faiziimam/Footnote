@@ -52,7 +52,7 @@ class Queue:
     def pull(self, limit=50, redeliver_after=REDELIVER_AFTER):
         now = time.time()
         with self.lock:
-            out = [e for e in self.events if now - e["delivered"] > redeliver_after][:limit]
+            out = [e for e in self.events if now - e["delivered"] >= redeliver_after][:limit]   # >= : a coarse clock (Windows) can make two calls look simultaneous
             for e in out:
                 e["delivered"] = now
             self._save()
