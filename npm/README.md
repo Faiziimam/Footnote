@@ -16,4 +16,6 @@ npm install -g footnote-app # or install once, then just:  footnote
 - Using it with an AI tool: `npx footnote-app connect claude` writes the right setup for your project.
 - Python not in the usual place? Set `FOOTNOTE_PYTHON` to its full path.
 
+Website: https://faiziimam.github.io/Footnote/
+
 Full documentation, security policy and source: https://github.com/Faiziimam/Footnote

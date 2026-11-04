@@ -2,6 +2,7 @@
 Copilot, Windsurf, ... Exposes a handful of plain tools; no dependencies."""
 import json
 import sys
+from . import __version__
 from .api import Tracker, TrackerError
 from .guide import SERVER_INSTRUCTIONS
 from .security import UNTRUSTED
@@ -157,7 +158,7 @@ def handle(tr, msg):
     if method == "initialize":
         return {"protocolVersion": params.get("protocolVersion", "2024-11-05"),
                 "capabilities": {"tools": {}},
-                "serverInfo": {"name": "footnote", "version": "0.2.0"},
+                "serverInfo": {"name": "footnote", "version": __version__},
                 "instructions": SERVER_INSTRUCTIONS}
     if method == "tools/list":
         return {"tools": TOOLS}

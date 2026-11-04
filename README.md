@@ -1,17 +1,71 @@
-# Footnote
+<h1 align="center">Footnote</h1>
 
-A project tracker that **creates and updates itself**. It reads your notes and docs, watches your
-work (git, or just you saying what happened), and keeps your tracker current — in Obsidian, Notion,
-Google Sheets, Excel, or a database. No technical knowledge needed.
+<p align="center"><b>A project tracker that creates and updates itself.</b><br>
+It reads your notes and docs, watches your work (git, or just you saying what happened), and keeps your tracker current in
+Obsidian, Notion, Google Sheets, Excel or a database. Runs on your own computer. No technical knowledge needed.</p>
+
+<p align="center">
+<a href="https://faiziimam.github.io/Footnote/"><b>Website</b></a> ·
+<a href="https://github.com/Faiziimam/Footnote/releases/latest">Download</a> ·
+<a href="docs/installing.md">Install guide</a> ·
+<a href="https://github.com/Faiziimam/Footnote/issues/new/choose">Ask a question or report a problem</a> ·
+<a href="CONTRIBUTING.md">Contribute</a>
+</p>
+
+<p align="center">
+<a href="https://github.com/Faiziimam/Footnote/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Faiziimam/Footnote/actions/workflows/ci.yml/badge.svg"></a>
+<a href="https://github.com/Faiziimam/Footnote/actions/workflows/codeql.yml"><img alt="CodeQL" src="https://github.com/Faiziimam/Footnote/actions/workflows/codeql.yml/badge.svg"></a>
+<a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
+<img alt="Python 3.9+" src="https://img.shields.io/badge/python-3.9%2B-blue">
+<img alt="No runtime dependencies" src="https://img.shields.io/badge/runtime%20dependencies-0-brightgreen">
+</p>
+
+## Who is it for?
+
+- **Founders and makers** who want to know "where are we, what's next?" without keeping a tracker by hand.
+- **Developers** who want commits, pull requests and AI-agent work to move tasks automatically.
+- **Teams** who need to see who did what, who owns what, and where work collides.
+- **Anyone running a project**: a portfolio, an online store, a campaign, client work, research. It is not only for code.
+
+## What you get
+
+- **A tracker that keeps itself current.** Say "I finished the logo and started the landing page", mention `T-004` in a commit, or tick a box in a doc, and the right tasks move.
+- **Your tools, both ways.** Edit in Obsidian, Notion, Google Sheets, Excel or SQLite and the change flows back.
+- **The whole project's memory.** Architecture, decisions, numbers, timeline and a "is it really done?" checklist.
+- **Reports people read.** A manager report, an HTML page, a PowerPoint deck, or a daily, weekly or monthly email.
+- **Safe by design.** Your data stays on your computer, there is no account and no server of ours, and every change can be undone.
 
 ## Start (2 minutes)
 
-1. Install Python 3.9+ (python.org). Already use Node? Just run `npx footnote-app` (it needs Python too, but no Python packages). Otherwise, in the folder you work in:
-   `pip install /path/to/footnote`  (or just double-click **Start Tracker.command** / **start-tracker.bat**)
-2. Run `footnote` — it asks a few plain questions (where do you want your tracker? which AI tool do you use?).
-3. Run `footnote ui` — your tracker opens in the browser. Type what happened ("I finished the logo and
-   started the landing page") and it updates. Tasks come from your checklists (`- [ ] …`) or from the
-   headings in documents like `ARCHITECTURE.md` or `README.md`. No docs? Just add tasks in the page.
+You need **Python 3.9 or newer** ([python.org](https://www.python.org/downloads/)). Nothing else to install.
+
+**Option 1: one file (easiest).** Download `footnote.pyz` from the [latest release](https://github.com/Faiziimam/Footnote/releases/latest), then in the folder you work in:
+
+```bash
+python footnote.pyz
+```
+
+**Option 2: with npm** (once `footnote-app` is published on npm; it still needs Python, but no Python packages):
+
+```bash
+npx footnote-app
+```
+
+**Option 3: from source:**
+
+```bash
+git clone https://github.com/Faiziimam/Footnote.git
+pip install ./Footnote
+footnote
+```
+
+Then:
+
+1. Run `footnote`. It asks a few plain questions (where do you want your tracker, which AI tool do you use).
+2. Run `footnote ui`. Your tracker opens in the browser. Type what happened and it updates. Tasks come from your
+   checklists (`- [ ] ...`) or from the headings in documents like `ARCHITECTURE.md` or `README.md`. No docs? Add tasks in the page.
+
+Windows or Mac and not comfortable with a terminal? Double-click **start-tracker.bat** or **Start Tracker.command**.
 
 ## Where your tracker can live (use several at once; edits flow both ways)
 
@@ -86,10 +140,21 @@ and releases you can verify. Read the [security policy](SECURITY.md) and the [th
 
 ### Contribute
 You don't need to code: tell us where you got stuck, share how you use it, improve the words, test on your system.
-See [CONTRIBUTING.md](CONTRIBUTING.md) and the [code of conduct](CODE_OF_CONDUCT.md). The website lives in [`site/`](site/)
-(`python scripts/set_site_repo.py Faiziimam/Footnote`, then publish with the included GitHub Pages workflow, or any static host).
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the [code of conduct](CODE_OF_CONDUCT.md). The website ([faiziimam.github.io/Footnote](https://faiziimam.github.io/Footnote/)) lives in [`site/`](site/) and is published by the Website workflow.
 
 ### Honest limits
 Tested against fake versions of Notion, Sheets, Stripe, GitHub, Shopify, WooCommerce, Trello and Slack — not yet against the real
 services (`footnote doctor --live` is how you check yours). Not built: Linear/Jira adapters, Google Docs/Figma signals, tax
 calendars. A hosted team version and logins are intentionally not offered (everything runs on your device).
+
+## Links
+
+- Website: https://faiziimam.github.io/Footnote/
+- Releases: https://github.com/Faiziimam/Footnote/releases
+- Changelog: [CHANGELOG.md](CHANGELOG.md)
+- Security: [SECURITY.md](SECURITY.md) (report privately via the Security tab)
+- Help and ideas: [open an issue](https://github.com/Faiziimam/Footnote/issues/new/choose)
+
+## License
+
+[Apache-2.0](LICENSE). Copyright 2026 Syed Faiz Imam and Footnote contributors. See [NOTICE](NOTICE).
