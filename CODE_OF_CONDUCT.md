@@ -17,4 +17,4 @@ age, ability, or language. This text is written in our own words and is inspired
 This applies in the repository, issues, pull requests, discussions and any space where someone represents the project.
 Maintainers may edit or remove contributions that violate it and may warn, temporarily limit or ban people who do. To report a
 problem, use the repository's private reporting option (Security tab) or contact a maintainer directly; reports are handled
-privately and with care. *Maintainers: add a dedicated contact address here before publishing.*
+privately and with care. Until a dedicated address is published, report conduct concerns privately through GitHub: open this repository's **Security** tab → **Report a vulnerability** and start the title with "Conduct:" (only the maintainers can read it).

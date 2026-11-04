@@ -9,7 +9,7 @@ pre-commit, reproducible releases). **These settings live on GitHub, not in file
 - [ ] Maintainers sign commits (SSH or GPG) and enable "Vigilant mode".
 
 ## Branch protection on `main` (a ruleset also works)
-- [ ] Require a pull request; at least 1 approval; dismiss stale approvals; require review from Code Owners.
+- [ ] Require a pull request and dismiss stale approvals. Approvals: **0 while you are the only maintainer** (GitHub will not let you approve your own pull request, so 1 would lock you out); raise to 1 and turn on Code Owner review once there is a second maintainer.
 - [ ] Require status checks: `test (ubuntu-latest, py3.9)` … `py3.13`, `security`, `CodeQL`.
 - [ ] Require branches to be up to date; require conversation resolution; require linear history.
 - [ ] Block force pushes and deletions; include administrators.

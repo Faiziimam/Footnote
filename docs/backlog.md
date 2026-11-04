@@ -8,7 +8,9 @@ Rule for now: **strengthen what exists before adding anything new.** Nothing in 
 
 | What | Result |
 |---|---|
-| GitHub repository created, code pushed | https://github.com/Faiziimam/Footnote (private) |
+| GitHub repository created, code pushed, **made public** | https://github.com/Faiziimam/Footnote |
+| Commit history rewritten to your name and GitHub noreply address | no personal email in history on `main` |
+| `NOTICE` names the copyright holder (Syed Faiz Imam) | done |
 | `OWNER/REPO` replaced, CODEOWNERS filled in | site and docs point at `Faiziimam/Footnote` |
 | Licence switched to Apache-2.0 | `LICENSE` is the official text; `NOTICE` added |
 | First CI run on GitHub | Python 3.9, 3.10, 3.11, 3.12, 3.13, the installer-reproducibility job and the security job all pass |

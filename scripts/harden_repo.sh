@@ -21,12 +21,13 @@ run gh api -X PATCH "repos/$REPO" \
 # Actions: read-only token by default, Actions may not approve PRs
 run gh api -X PUT "repos/$REPO/actions/permissions/workflow" -f default_workflow_permissions=read -F can_approve_pull_request_reviews=false
 
-# Branch protection
+# Branch protection. A pull request and passing checks are required. With ONE maintainer, GitHub does not let you approve your own pull request,
+# so approvals are 0 and Code Owner review is off; raise both (1 and true) as soon as there is a second maintainer.
 cat > /tmp/protection.json <<JSON
 {
   "required_status_checks": {"strict": true, "contexts": ["test (ubuntu-latest, py3.9)", "test (ubuntu-latest, py3.13)", "security", "Analyze (python)"]},
   "enforce_admins": true,
-  "required_pull_request_reviews": {"dismiss_stale_reviews": true, "require_code_owner_reviews": true, "required_approving_review_count": 1},
+  "required_pull_request_reviews": {"dismiss_stale_reviews": true, "require_code_owner_reviews": false, "required_approving_review_count": 0},
   "restrictions": null,
   "required_linear_history": true,
   "allow_force_pushes": false,
