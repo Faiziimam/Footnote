@@ -31,7 +31,7 @@
 <header class="top"><div class="wrap nav">
   <a class="brand" href="#top"><span class="logo" aria-hidden="true"><i></i></span>Footnote</a>
   <nav aria-label="Main"><ul>
-    <li><a href="#how">How it works</a></li><li><a href="#features">Features</a></li><li><a href="#daily">Day to day</a></li>
+    <li><a href="#why">Why Footnote</a></li><li><a href="#how">How it works</a></li><li><a href="#features">Features</a></li><li><a href="#daily">Day to day</a></li>
     <li><a href="#start">Get started</a></li><li><a href="#safe">Safety</a></li><li><a href="#faq">FAQ</a></li>
     <li><a class="gh" href="https://github.com/Faiziimam/Footnote">GitHub</a></li>
   </ul></nav>
@@ -41,15 +41,15 @@
 <section class="hero" id="top"><div class="wrap grid">
   <div>
     <p class="eyebrow">Free · open source · runs on your computer</p>
-    <h1>A tracker that fills itself in.</h1>
+    <h1>A tracker that <em>fills itself in.</em></h1>
     <p class="lead">You do the work. Footnote keeps your plan, your progress, your numbers and “who did what” up to date, in the tools you already use. No more Friday-afternoon status updates.</p>
-    <div class="cta"><a class="btn primary" href="#start">Get started in 2 minutes</a><a class="btn ghost" href="#how">See how it works</a></div>
+    <div class="cta"><a class="btn primary" href="#start">Get started in 2 minutes</a><a class="btn ghost" href="#why">Why it’s different</a></div>
     <pre class="term install" aria-label="Install command"><span class="p">$</span> npx footnote-app</pre>
     <p class="fine">Needs Python 3.9+. No account. No server of ours. Nothing leaves your computer unless you connect a tool.</p>
     <p class="badges"><a href="https://github.com/Faiziimam/Footnote/releases/latest">Latest release: v0.1.0</a><span>Apache-2.0</span><span>0 runtime dependencies</span></p>
   </div>
   <div class="demo" role="img" aria-label="Example: typing 'I finished the logo and started the landing page' moves two cards on the board and raises progress to 62 percent">
-    <div class="say"><b>You said:</b> “I finished the logo and started on the landing page.”</div>
+    <div class="say"><b>You said:</b> <span class="typed">“I finished the logo and started on the landing page.”</span></div>
     <div class="board">
       <div class="col"><p class="h">Not started</p><div class="card">Write the launch email<small>Priya</small></div><div class="card">Order business cards<small>due Fri</small></div></div>
       <div class="col"><p class="h">In progress</p><div class="card moved2">Landing page<small>Sam · just now</small></div></div>
@@ -59,23 +59,54 @@
   </div>
 </div></section>
 
-<section class="strip" aria-label="At a glance"><div class="wrap facts">
-  <div><b>0</b><span>runtime dependencies</span></div>
-  <div><b>7</b><span>trackers to sync with</span></div>
-  <div><b>6</b><span>AI assistants supported</span></div>
-  <div><b>180+</b><span>automated tests</span></div>
-  <div><b>Free</b><span>Apache-2.0 open source</span></div>
+<section class="marq" aria-label="Works with"><div class="track">
+  <span class="chip">Obsidian</span><span class="chip">Notion</span><span class="chip">Google Sheets</span><span class="chip">Excel / CSV</span><span class="chip">SQLite</span><span class="chip">GitHub Issues</span><span class="chip">Trello</span><span class="chip">Claude</span><span class="chip">Cursor</span><span class="chip">Codex</span><span class="chip">Gemini</span><span class="chip">Copilot</span><span class="chip">Windsurf</span><span class="chip">Stripe</span><span class="chip">Shopify</span><span class="chip">WooCommerce</span><span class="chip">Slack</span><span class="chip">Email</span><span class="chip">PowerPoint</span>
+  <span class="chip" aria-hidden="true">Obsidian</span><span class="chip" aria-hidden="true">Notion</span><span class="chip" aria-hidden="true">Google Sheets</span><span class="chip" aria-hidden="true">Excel / CSV</span><span class="chip" aria-hidden="true">SQLite</span><span class="chip" aria-hidden="true">GitHub Issues</span><span class="chip" aria-hidden="true">Trello</span><span class="chip" aria-hidden="true">Claude</span><span class="chip" aria-hidden="true">Cursor</span><span class="chip" aria-hidden="true">Codex</span><span class="chip" aria-hidden="true">Gemini</span><span class="chip" aria-hidden="true">Copilot</span><span class="chip" aria-hidden="true">Windsurf</span><span class="chip" aria-hidden="true">Stripe</span><span class="chip" aria-hidden="true">Shopify</span><span class="chip" aria-hidden="true">WooCommerce</span><span class="chip" aria-hidden="true">Slack</span><span class="chip" aria-hidden="true">Email</span><span class="chip" aria-hidden="true">PowerPoint</span>
 </div></section>
 
-<section id="problem" class="alt problem"><div class="wrap center">
-  <p class="eyebrow">The problem</p>
-  <h2>Trackers are only useful when someone keeps them up to date. Nobody does.</h2>
-  <p class="lead">So the plan is in one place, the real work is in another, the sales are in a third, and the only way to know what happened is to ask around.</p>
-  <div class="cards">
-    <div class="tile"><h3>It goes stale</h3><p>Updating a tracker feels like extra work, so it falls behind, and then people stop trusting it.</p></div>
-    <div class="tile"><h3>Nobody remembers why</h3><p>Months later: what did we build, who did it, why did we choose this? The answers are scattered across chats and heads.</p></div>
-    <div class="tile"><h3>The numbers live elsewhere</h3><p>Progress in one tool, sales in another, invoices in a spreadsheet. Nobody sees the whole picture in one place.</p></div>
-    <div class="tile"><h3>Handovers hurt</h3><p>When someone leaves, or a project ends, the knowledge walks out of the door with them.</p></div>
+<section id="why"><div class="wrap">
+  <div class="center"><p class="eyebrow">Why Footnote</p><h2>Seven things no spreadsheet will do for you.</h2>
+  <p class="lead">Most trackers are only as good as the last time someone remembered to update them. Footnote is built around the opposite idea.</p></div>
+  <div class="bento">
+    <article class="b w2 hot"><span class="k">1</span><h3>It fills itself in</h3>
+      <p>Tasks move from what actually happens: a commit, a ticked checkbox in your docs, a sentence you type, or an update from your AI assistant.</p>
+      <div class="flow"><span class="sig">git: “closes T-004”</span><span class="sig">☑ ticked in PLAN.md</span><span class="sig">“finished the logo”</span><i class="arr" aria-hidden="true">→</i><span class="res">T-004 · Done</span></div></article>
+    <article class="b"><span class="k">2</span><h3>Private by design</h3>
+      <p>It runs on your computer. We can’t see your data because we never receive it.</p>
+      <div class="big3"><div><b>0</b><span>accounts</span></div><div><b>0</b><span>servers</span></div><div><b>0</b><span>dependencies</span></div></div></article>
+    <article class="b"><span class="k">3</span><h3>It lives where you work</h3>
+      <p>Edit in any of them and the others follow, in both directions.</p>
+      <div class="pills"><span>Obsidian</span><span>Notion</span><span>Sheets</span><span>Excel</span><span>SQLite</span><span>GitHub</span><span>Trello</span></div></article>
+    <article class="b"><span class="k">4</span><h3>It remembers the project</h3>
+      <p>Not just tasks: the story of the work.</p>
+      <ul class="mini"><li>Architecture, re-scanned from the code</li><li>Decisions, risks and why</li><li>The numbers behind the business</li><li>Who built what, and when</li></ul></article>
+    <article class="b"><span class="k">5</span><h3>You can trust it</h3>
+      <p>Built so a wrong guess is cheap to fix.</p>
+      <ul class="mini ok"><li>Every change can be undone</li><li>It asks when it isn’t sure</li><li>Your hand-made changes stay put</li><li>It never invents numbers</li></ul></article>
+    <article class="b"><span class="k">6</span><h3>Reports people read</h3>
+      <p>The status update writes itself.</p>
+      <ul class="mini"><li>Manager report, or a shareable page</li><li>A PowerPoint deck in one command</li><li>Daily, weekly or monthly email</li></ul></article>
+    <article class="b w2"><span class="k">7</span><h3>For everyone, not just developers</h3>
+      <p>A founder can type a sentence. A developer can lean on git. A team lead can see who’s doing what without a stand-up. Your AI assistant can plan the work and report progress through it.</p>
+      <div class="pills soft"><span>Founders</span><span>Developers</span><span>Designers</span><span>Team leads</span><span>Freelancers</span><span>Small businesses</span></div></article>
+  </div>
+</div></section>
+
+<section id="problem" class="alt problem"><div class="wrap">
+  <div class="center"><p class="eyebrow">The difference</p><h2>The same Monday, with and without it.</h2></div>
+  <div class="ba">
+    <div class="side bad"><h3>Without Footnote</h3><ul>
+      <li>The tracker is two weeks out of date, so nobody trusts it.</li>
+      <li>“What did we build, and why?” is answered from memory.</li>
+      <li>Progress is in one tool, sales in another, invoices in a third.</li>
+      <li>The status update is a chore someone does on Friday afternoon.</li>
+      <li>When someone leaves, the knowledge leaves with them.</li></ul></div>
+    <div class="side good"><h3>With Footnote</h3><ul>
+      <li>Tasks moved when the work happened. The board is current.</li>
+      <li>Decisions, architecture and history are written down as you go.</li>
+      <li>Plan, numbers and “who did what” sit in one report.</li>
+      <li>An email arrives on Monday with the status and the slides.</li>
+      <li>A handover report says what’s built, decided and missing.</li></ul></div>
   </div>
 </div></section>
 
@@ -118,7 +149,23 @@
   </div>
 </div></section>
 
-<section id="daily" class="alt"><div class="wrap">
+<section id="compare" class="alt"><div class="wrap">
+  <div class="center"><p class="eyebrow">How it compares</p><h2>Footnote doesn’t replace your tools. It feeds them.</h2>
+  <p class="lead">Keep Notion, Sheets or Trello if you like them. Here is how the approach differs. “Typically” describes common setups, not any one product.</p></div>
+  <div class="tablewrap"><table class="cmp">
+    <thead><tr><th scope="col">&nbsp;</th><th scope="col" class="us">Footnote</th><th scope="col">A spreadsheet</th><th scope="col">A typical project tool</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Updates itself from your work</th><td class="us yes">Yes: git, docs, plain English, AI assistants</td><td>By hand</td><td>Mostly by hand</td></tr>
+      <tr><th scope="row">Works inside the tools you already use</th><td class="us yes">Yes: seven, with two-way sync</td><td>It is the tool</td><td>Its own app</td></tr>
+      <tr><th scope="row">Remembers architecture, decisions and numbers</th><td class="us yes">Yes, built in</td><td>If someone writes them</td><td>Usually a separate wiki</td></tr>
+      <tr><th scope="row">Your data stays on your computer</th><td class="us yes">Yes: no account, no server</td><td>Depends where you keep it</td><td>Typically hosted by the vendor</td></tr>
+      <tr><th scope="row">Undo for automatic changes</th><td class="us yes">Yes: <code>undo</code></td><td>Version history, if enabled</td><td>Varies</td></tr>
+      <tr><th scope="row">Cost and licence</th><td class="us yes">Free, Apache-2.0</td><td>Varies</td><td>Typically per seat</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section id="daily"><div class="wrap">
   <p class="eyebrow">In your day-to-day</p><h2>Pick the one that sounds like you.</h2>
   <p class="lead">The same tool, used five different ways. Each of these works today.</p>
   <div class="tabs" role="tablist" aria-label="Who are you?">
@@ -188,7 +235,7 @@
   </div>
 </div></section>
 
-<section id="start"><div class="wrap">
+<section id="start" class="alt"><div class="wrap">
   <div class="center"><p class="eyebrow">Get started</p><h2>Two minutes, no installation headaches.</h2>
   <p class="lead">You need Python 3.9 or newer (most computers have it; if not, python.org). That’s all: there’s nothing else to install.</p></div>
   <ol class="steps">
@@ -214,7 +261,7 @@
   </div>
 </div></section>
 
-<section id="safe" class="alt"><div class="wrap two">
+<section id="safe"><div class="wrap two">
   <div><p class="eyebrow">Your data stays yours</p><h2>Built to be safe to run on your work.</h2>
     <p class="lead">It runs on your computer. We have no servers, no accounts and no way to see your data.</p>
     <ul class="checks">
