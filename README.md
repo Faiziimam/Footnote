@@ -47,7 +47,7 @@ You need **Python 3.9 or newer** ([python.org](https://www.python.org/downloads/
 python footnote.pyz
 ```
 
-**Option 2: with npm** (once `footnote-app` is published on npm; it still needs Python, but no Python packages):
+**Option 2: with npm** (`footnote-app` is published on npm; it still needs Python, but no Python packages):
 
 ```bash
 npx footnote-app
